@@ -30,6 +30,8 @@ Collision/
 │   ├── AXIOM_VERIFICATION.md
 │   ├── ARCHITECTURE.md
 │   └── DEFINITION_VERIFICATION.md
+├── scripts/
+│   └── install.sh                  -- Installation script
 ├── lakefile.lean
 └── lean-toolchain
 ```
@@ -49,6 +51,42 @@ Approximation theory → deg̃ ≥ Ω(n^{1/3})
          ↓
 Q(collision) ≥ Ω(n^{1/3})
 ```
+
+## Installation
+
+### Prerequisites
+
+- macOS or Linux
+- `curl` (for downloading elan)
+
+### Quick Start
+
+```bash
+# Clone the repository
+git clone https://github.com/pmarreddy/Collision.git
+cd Collision
+
+# Run install script (installs Lean 4 + builds project)
+./scripts/install.sh
+```
+
+### Manual Installation
+
+1. **Install elan** (Lean version manager):
+   ```bash
+   curl https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh -sSf | sh
+   ```
+
+2. **Restart shell** or run:
+   ```bash
+   source ~/.profile  # or ~/.bashrc, ~/.zshrc
+   ```
+
+3. **Build the project**:
+   ```bash
+   lake update   # Download Mathlib (first run takes ~10-15 min)
+   lake build    # Build the formalization
+   ```
 
 ## Build
 
