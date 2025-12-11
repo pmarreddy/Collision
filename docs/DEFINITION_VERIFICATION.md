@@ -361,13 +361,14 @@ noncomputable def promiseApproxDegree (m n : ℕ) (ε : ℝ) : ℕ :=
 
 #### ClassicalQueryAlgorithm
 **Standard Math:** A **T-query classical algorithm** has acceptance probability that is a **degree-T polynomial** (not 2T):
-$$\text{Pr}[\text{accept} | x] = p(x) \quad \text{where } \deg(p) \leq T$$
+$$\text{Pr}[\text{accept} | x] = p(x) \in [0,1] \quad \text{where } \deg(p) \leq T$$
 
 **Lean:**
 ```lean
 structure ClassicalQueryAlgorithm (n : ℕ) where
   queries : ℕ
   acceptance : Input n → ℝ
+  prob_valid : ∀ x, 0 ≤ acceptance x ∧ acceptance x ≤ 1
   is_polynomial : ∃ p, (∀ x, acceptance x = p.eval (toReal x)) ∧ p.totalDegree ≤ queries
 ```
 **Reference:** Nisan (1991), "CREW PRAMS and decision trees"
