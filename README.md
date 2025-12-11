@@ -86,8 +86,8 @@ See [docs/AXIOMS.md](docs/AXIOMS.md) for details.
 
 ## References
 
-1. Aaronson, "Quantum Lower Bound for the Collision Problem", STOC 2002
-2. Aaronson-Shi, "Quantum Lower Bounds for Collision and Element Distinctness", 2004
+1. Aaronson, ["Quantum Lower Bound for the Collision Problem"](https://arxiv.org/abs/quant-ph/0111102), STOC 2002 — [PDF](https://www.scottaaronson.com/papers/collision.pdf)
+2. Aaronson-Shi, ["Quantum Lower Bounds for Collision and Element Distinctness"](https://dl.acm.org/doi/10.1145/1008731.1008735), JACM 2004
 3. Brassard-Høyer-Tapp, "Quantum Algorithm for the Collision Problem", 1997
 4. Beals et al., "Quantum Lower Bounds by Polynomials", FOCS 1998
 5. Minsky-Papert, "Perceptrons", 1969
