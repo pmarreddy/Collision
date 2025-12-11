@@ -57,7 +57,9 @@ Q(collision) ≥ Ω(n^{1/3})
 ### Prerequisites
 
 - macOS or Linux
-- `curl` (for downloading elan)
+- `git`, `curl`
+- ~5GB disk space (for Mathlib)
+- ~8GB RAM recommended
 
 ### Quick Start
 
@@ -82,10 +84,13 @@ cd Collision
    source ~/.profile  # or ~/.bashrc, ~/.zshrc
    ```
 
-3. **Build the project**:
+3. **Clone and build**:
    ```bash
-   lake update   # Download Mathlib (first run takes ~10-15 min)
-   lake build    # Build the formalization
+   git clone https://github.com/pmarreddy/Collision.git
+   cd Collision
+   lake update              # Download dependencies
+   lake exe cache get       # Download pre-built Mathlib (saves ~15 min)
+   lake build               # Build the formalization
    ```
 
 ## Build

@@ -15,6 +15,14 @@ esac
 
 echo "Detected platform: $PLATFORM"
 
+# Check prerequisites
+for cmd in curl git; do
+    if ! command -v $cmd &> /dev/null; then
+        echo "Error: $cmd is required but not installed."
+        exit 1
+    fi
+done
+
 # Check if elan is installed
 if command -v elan &> /dev/null; then
     echo "elan is already installed"
@@ -50,15 +58,19 @@ echo "Project root: $PROJECT_ROOT"
 # Update toolchain
 echo "Setting up Lean toolchain..."
 if [ -f "lean-toolchain" ]; then
-    TOOLCHAIN=$(cat lean-toolchain)
+    TOOLCHAIN=$(tr -d '[:space:]' < lean-toolchain)
     echo "Using toolchain: $TOOLCHAIN"
     elan install "$TOOLCHAIN"
     elan override set "$TOOLCHAIN"
 fi
 
 # Download and build dependencies
-echo "Downloading Mathlib (this may take a while on first run)..."
+echo "Downloading dependencies..."
 lake update
+
+# Download pre-built Mathlib cache (much faster than building from source)
+echo "Downloading Mathlib cache (this saves ~15 minutes)..."
+lake exe cache get || echo "Cache download failed, will build from source"
 
 echo "Building project..."
 lake build
