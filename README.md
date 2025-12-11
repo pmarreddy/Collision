@@ -110,8 +110,8 @@ lake build Collision
 | Category | Count |
 |----------|-------|
 | Foundational | 2 |
-| Approximation Theory | 6 |
-| Query Complexity | 4 |
+| Approximation Theory | 5 |
+| Query Complexity | 5 |
 | **Total** | **12** |
 
 **Derived theorems** (not axioms):

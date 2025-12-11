@@ -7,8 +7,8 @@ All axioms in the Collision formalization are standard results from the literatu
 | Category | Count |
 |----------|-------|
 | Foundational | 2 |
-| Approximation Theory | 6 |
-| Query Complexity | 4 |
+| Approximation Theory | 5 |
+| Query Complexity | 5 |
 | **Total** | **12** |
 
 **Derived Theorems** (not axioms):
